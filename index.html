@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Fire Esports Tournament</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: white;
+        background: url('https://sm.ign.com/ign_ap/screenshot/default/garena-free-fire-most-downloaded-game-october-2021-garena-in_aeh4.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .overlay {
+        background: rgba(0,0,0,0.75);
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    .section {
+        margin: 30px auto;
+        max-width: 900px;
+        padding: 20px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+    }
+
+    ul {
+        line-height: 1.8;
+    }
+
+    .gallery img {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, button {
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+    }
+
+    input {
+        outline: none;
+    }
+
+    button {
+        background: #ff4d4d;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #ff1a1a;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+
+<body>
+<div class="overlay">
+
+    <h1>🔥 Free Fire Esports Tournament 🔥</h1>
+
+    <div class="section">
+        <h2>📢 Tournament Description</h2>
+        <p>
+            Welcome to the ultimate Free Fire Esports Tournament! Compete with skilled players,
+            showcase your battle skills, and win exciting rewards. This tournament is designed
+            for fair play, competitive spirit, and high-level gameplay.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>📜 Rules & Regulations</h2>
+        <ul>
+            <li>No hacking, cheating, or use of mods.</li>
+            <li>No leaving the match during gameplay.</li>
+            <li>No forced joining or unauthorized entry.</li>
+            <li>Each player must maintain fair play at all times.</li>
+            <li>Player records will be stored for verification.</li>
+            <li>Sharing room codes will result in immediate ban.</li>
+        </ul>
+    </div>
+
+    <div class="section gallery">
+        <h2>🎮 Game Visuals</h2>
+        <img src="https://i.pinimg.com/736x/a3/56/33/a35633f4678e1475f3277d25f4733259.jpg">
+        <img src="https://www.exitlag.com/blog/wp-content/uploads/2024/11/play-free-fire-online-4.webp">
+        <img src="https://wallpapers.com/images/featured/free-fire-pictures-whpafw9a72o260i6.jpg">
+        <img src="https://media.assettype.com/analyticsinsight%2F2025-11-06%2Fzwvquk7m%2FFree-Fire-Max-Codes6nov.jpg?w=480&auto=format%2Ccompress&fit=max">
+        <img src="https://www.pockettactics.com/wp-content/sites/pockettactics/2024/03/free-fire-characters.jpg">
+    </div>
+
+    <div class="section">
+        <h2>📝 Room Joining Registration</h2>
+
+        <form id="regForm">
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <input type="text" id="uid" placeholder="Free Fire UID" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+
+            <button type="submit">Submit & Send</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        © Free Fire Esports Tournament
+    </div>
+
+</div>
+
+<script>
+document.getElementById("regForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let uid = document.getElementById("uid").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+
+    let subject = "Free Fire Tournament Registration";
+    let body = `
+Name: ${name}
+UID: ${uid}
+Email: ${email}
+Phone: ${phone}
+`;
+
+    let mailtoLink = `mailto:meharrealestate786@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+});
+</script>
+
+</body>
+</html>
