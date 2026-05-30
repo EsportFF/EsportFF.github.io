@@ -1,67 +1,552 @@
-<!-- ========== SIDEBAR WITH WORKING TOURNAMENTS LINK - REPLACE YOUR EXISTING SIDEBAR ========== -->
-<!-- 
-  INSTRUCTIONS:
-  1. Replace the entire <aside> section in your blog page with this code block.
-  2. The "🏆 TOURNAMENTS" link will now redirect to index.html (your main tournament page).
-  3. All other sidebar features (events, redeem codes, WhatsApp CTA) remain fully functional.
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="google-site-verification" content="WKcUrmgGi8oAv2GzyK-ux4BO6osBpHRo2XtI6bUrOgo" />
+
+<title>Free Fire Insider | Updates & Events Blog</title>
+
+<meta name="description" content="Latest Free Fire updates, upcoming events, new characters, weapon balance, esports tournaments schedule and custom room news. Stay ahead in FF!">
+
+<meta name="keywords" content="free fire news, free fire update, free fire upcoming event, ff new update, free fire ob44, free fire advance server, free fire leaks, free fire diamond top up event, free fire esports schedule, ff tournament news, free fire new character, free fire new weapon, free fire inc patch note, free fire redeem code, ff leaks, free fire max events, garena free fire events, free fire blog, ff custom room events">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:#eaeaea;
+overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+width:7px;
+}
+::-webkit-scrollbar-thumb{
+background:#ffb703;
+border-radius:10px;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.88);
+backdrop-filter:blur(16px);
+z-index:1000;
+border-bottom:1px solid rgba(255,183,3,0.25);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(135deg,#ffb703,#ffdd77);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+letter-spacing:1px;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+.nav-links li a{
+text-decoration:none;
+color:#f0f0f0;
+font-weight:500;
+transition:0.3s;
+}
+.nav-links li a:hover{ color:#ffb703; }
+.nav-links li a.active{ color:#ffb703; border-bottom:2px solid #ffb703; padding-bottom:4px;}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#ffb703;
+background:transparent;
+border:none;
+cursor:pointer;
+}
+
+.blog-header{
+background:linear-gradient(115deg, #0a0a0f 0%, #1a1507 100%);
+padding:140px 5% 70px;
+text-align:center;
+border-bottom:1px solid rgba(255,183,3,0.15);
+}
+.blog-header h1{
+font-size:clamp(2.3rem,7vw,3.8rem);
+color:#ffb703;
+margin-bottom:1rem;
+}
+.blog-header p{
+max-width:700px;
+margin:0 auto;
+color:#bcbcbc;
+font-size:1.1rem;
+}
+.date-badge{
+background:rgba(255,183,3,0.2);
+display:inline-block;
+padding:0.4rem 1.2rem;
+border-radius:50px;
+font-size:0.8rem;
+margin-top:1.2rem;
+color:#ffb703;
+}
+
+.container{
+max-width:1300px;
+margin:0 auto;
+padding:3rem 5%;
+}
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+gap:2rem;
+margin-bottom:3rem;
+}
+.blog-card{
+background:linear-gradient(145deg,#111111,#0b0b0b);
+border-radius:28px;
+overflow:hidden;
+transition:0.35s ease;
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 15px 30px -12px rgba(0,0,0,0.5);
+}
+.blog-card:hover{
+transform:translateY(-8px);
+border-color:#ffb703;
+box-shadow:0 28px 36px -12px rgba(255,183,3,0.2);
+}
+.card-img{
+width:100%;
+height:210px;
+object-fit:cover;
+display:block;
+transition:0.4s;
+}
+.blog-card:hover .card-img{
+transform:scale(1.02);
+}
+.card-content{
+padding:1.6rem;
+}
+.card-category{
+color:#ffb703;
+font-size:0.75rem;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:0.6rem;
+}
+.card-title{
+font-size:1.45rem;
+font-weight:700;
+margin-bottom:0.8rem;
+line-height:1.3;
+color:#fff;
+}
+.card-desc{
+color:#b0b0b0;
+font-size:0.9rem;
+line-height:1.6;
+margin-bottom:1.2rem;
+}
+.card-meta{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:0.8rem;
+color:#8a8a8a;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:1rem;
+}
+.read-more{
+color:#ffb703;
+text-decoration:none;
+font-weight:600;
+font-size:0.85rem;
+transition:0.2s;
+cursor:pointer;
+}
+.read-more:hover{ text-decoration:underline; }
+
+.two-columns{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:2rem;
+margin-top:2rem;
+}
+.featured-article{
+background:rgba(255,183,3,0.03);
+border-radius:32px;
+padding:1.5rem;
+border:1px solid rgba(255,183,3,0.2);
+}
+.featured-title{
+font-size:1.9rem;
+margin-bottom:1rem;
+color:#ffb703;
+}
+.upcoming-list{
+list-style:none;
+margin-top:1rem;
+}
+.upcoming-list li{
+background:#101010;
+margin-bottom:1rem;
+padding:1rem;
+border-radius:20px;
+border-left:4px solid #ffb703;
+transition:0.2s;
+}
+.upcoming-list li:hover{
+background:#191919;
+transform:translateX(5px);
+}
+.event-name{
+font-weight:700;
+color:#fff;
+}
+.event-date{
+font-size:0.75rem;
+color:#ffb703;
+display:block;
+margin-top:6px;
+}
+.sidebar-card{
+background:#0c0c0c;
+border-radius:28px;
+padding:1.6rem;
+margin-bottom:2rem;
+border:1px solid rgba(255,255,255,0.05);
+}
+.sidebar-card h3{
+color:#ffb703;
+margin-bottom:1.2rem;
+font-size:1.5rem;
+}
+.redeem-code{
+background:#1f1b0e;
+padding:12px;
+border-radius:20px;
+font-family:monospace;
+text-align:center;
+margin:10px 0;
+border:1px dashed #ffb703;
+color:#ffdd99;
+}
+.cta-mini{
+background:linear-gradient(95deg,#ffb70320,#000);
+text-align:center;
+padding:1rem;
+border-radius:24px;
+}
+.pagination{
+display:flex;
+justify-content:center;
+gap:0.8rem;
+margin-top:2rem;
+}
+.page-btn{
+background:#161616;
+padding:8px 16px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+border:1px solid #2a2a2a;
+cursor:pointer;
+}
+.page-btn.active{
+background:#ffb703;
+color:#000;
+font-weight:bold;
+}
+footer{
+background:#080808;
+padding:2rem;
+text-align:center;
+border-top:1px solid rgba(255,183,3,0.1);
+color:#888;
+font-size:0.85rem;
+}
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:22px;
+width:60px;
+z-index:999;
+}
+.whatsapp-float img{
+width:100%;
+border-radius:50%;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+transition:0.2s;
+}
+.whatsapp-float:hover{ transform:scale(1.05);}
+.tiktok-side{
+position:fixed;
+left:18px;
+bottom:24px;
+display:flex;
+align-items:center;
+gap:10px;
+background:rgba(20,20,30,0.95);
+backdrop-filter:blur(12px);
+padding:8px 18px;
+border-radius:50px;
+z-index:999;
+border:1px solid rgba(255,183,3,0.3);
+}
+.tiktok-side img{
+width:26px;
+}
+.tiktok-side a{
+color:white;
+font-weight:500;
+text-decoration:none;
+}
+@media(max-width:860px){
+.menu-toggle{ display:block; }
+.nav-links{
+position:fixed;
+top:72px;
+left:-100%;
+width:70%;
+height:100vh;
+background:rgba(8,8,8,0.98);
+backdrop-filter:blur(20px);
+flex-direction:column;
+align-items:center;
+padding:2rem;
+gap:2rem;
+transition:0.3s;
+border-right:1px solid #ffb70340;
+}
+.nav-links.active{ left:0; }
+.two-columns{ grid-template-columns:1fr; }
+.blog-grid{ grid-template-columns:1fr; }
+.blog-header{ padding-top: 110px; }
+}
+@media(max-width:550px){
+.container{ padding:2rem 5%; }
+.card-title{ font-size:1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<div style="display:none;">
+free fire news, free fire update, upcoming events ff, free fire ob44 leaks, free fire max update, free fire new character 2026, free fire redeem code today, ff tournament schedule, free fire esports news, free fire custom room events, garena free fire patch notes, ff advance server, free fire diamond event, free fire new weapon M1014, free fire leaks blog, ff community updates, free fire rank push event, free fire inc events
+</div>
+
+<nav>
+<div class="logo">FF INSIDER</div>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="#" class="active">📰 Updates</a></li>
+<li><a href="index.html#rooms">🎮 Tournaments</a></li>
+<li><a href="index.html#join-cta">⚡ Join Now</a></li>
+</ul>
+</nav>
+
+<section class="blog-header">
+<h1>🔥 Free Fire INSIDER</h1>
+<p>Latest leaks, patch notes, upcoming events, custom room tournaments & esports news — all in one place.</p>
+<div class="date-badge">📅 Last Update: April 2, 2026 • OB45 Leaks Inside</div>
+</section>
+
+<div class="container">
+<div class="two-columns">
+<div>
+<div class="blog-grid" id="blogPostsContainer">
+<div class="blog-card">
+<img class="card-img" src="https://wallpapercave.com/wp/wp9334308.jpg" alt="FF OB45 Update">
+<div class="card-content">
+<div class="card-category">⚡ PATCH NOTES</div>
+<h3 class="card-title">OB45 Advance Server: New Character "Vortex" & XM8 Buff</h3>
+<p class="card-desc">Garena teases the next major update: new character with teleport skill, weapon rebalance, and new Clash Squad map. Advance server registration opens April 5th.</p>
+<div class="card-meta"><span>📅 March 30, 2026</span><a class="read-more" data-article="OB45 Advance Server details revealed. Vortex ability: teleport 15 meters. XM8 damage increased by 12%.">Read more →</a></div>
+</div>
+</div>
+<div class="blog-card">
+<img class="card-img" src="https://i.ytimg.com/vi/PanX0frBnSk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCDIIBWXu60NPYsS2epjP4MncefJQ" alt="Free Fire World Series">
+<div class="card-content">
+<div class="card-category">🏆 ESPORTS</div>
+<h3 class="card-title">FFWS 2026 SEA Qualifiers: Pakistan Teams Announced</h3>
+<p class="card-desc">Official FFWS qualifier schedule released. Top 4 Pakistani squads will battle for $100,000 prize pool. Group stage starts April 12 — Custom room scrims open for practice.</p>
+<div class="card-meta"><span>🎮 March 28, 2026</span><a class="read-more" data-article="FFWS 2026 Pakistan qualifiers: Team Phoenix, Squad X, Royal Kings, and Black Mamba advance. Watch live on Garena Esports YouTube.">Read more →</a></div>
+</div>
+</div>
+<div class="blog-card">
+<img class="card-img" src="https://cdn-www.bluestacks.com/bs-images/Free_Fire_Gun_Spray_Guide_En_2.jpg" alt="New Weapon M1014">
+<div class="card-content">
+<div class="card-category">🔫 WEAPON LAB</div>
+<h3 class="card-title">M1014 Evolution: New Legendary skin & Damage buff</h3>
+<p class="card-desc">Data miners found M1014's evolution stats for next update. Improved rate of fire plus new "Dragon's breath" effect coming in April's Incubator event. Leaked skins inside.</p>
+<div class="card-meta"><span>🔥 March 26, 2026</span><a class="read-more" data-article="M1014 Evolution: Legendary skin 'Inferno Dragon' adds fire trail effect. Damage increased by 8%, fire rate 15% faster.">Read more →</a></div>
+</div>
+</div>
+<div class="blog-card">
+<img class="card-img" src="https://d1nxzqpcg2bym0.cloudfront.net/google_play/com.noscrisma.survival.squad.freefire.sniper.game/462ebf00-6169-11eb-b929-0dee98f7fb66/640" alt="Free Fire Free Rewards">
+<div class="card-content">
+<div class="card-category">🎁 EVENTS</div>
+<h3 class="card-title">Eid Al-Fitr Mega Event: Free Permanent Skins & Diamond Royale</h3>
+<p class="card-desc">From April 2 to April 10, login event rewards: Permanent 'Desert Eagle' skin, weapon loot crate, and 50% discount on emote spins. Don't miss the daily free FF coins.</p>
+<div class="card-meta"><span>✨ March 25, 2026</span><a class="read-more" data-article="Eid event: Login daily for free rewards. Day 1: 5x Weapon Royale tokens. Day 3: Permanent 'Sand Viper' backpack. Day 7: Free Diamond Royale spin.">Read more →</a></div>
+</div>
+</div>
+<div class="blog-card">
+<img class="card-img" src="https://s3b.cashify.in/gpro/uploads/2021/07/09091611/Garena-Free-Fire-Custom-Room-1024x512.jpg" alt="FF Custom Room">
+<div class="card-content">
+<div class="card-category">🕹️ CUSTOM ROOM</div>
+<h3 class="card-title">Daily Free Fire Tournaments: Join Active Squad Rooms Now</h3>
+<p class="card-desc">Our community hosts free entry custom rooms every evening. Get room IDs via WhatsApp — clash squad and classic BR modes with pro players. Leaderboard rewards announced!</p>
+<div class="card-meta"><span>👥 March 24, 2026</span><a class="read-more" data-article="Daily tournament schedule: 8PM PKT Clash Squad, 9:30PM Battle Royale. Top 3 squads get free diamonds and in-game vouchers.">Read more →</a></div>
+</div>
+</div>
+<div class="blog-card">
+<img class="card-img" src="https://wallpapercave.com/wp/wp7418474.jpg" alt="FF Redeem Codes">
+<div class="card-content">
+<div class="card-category">🎫 REDEEM CODE</div>
+<h3 class="card-title">New Free Fire Redeem Codes (April 2) – Get Incubator Token</h3>
+<p class="card-desc">Exclusive redeem codes for today: FFIC32N8D, FF9E7R5T2A, VORTEX45FF. Limited to 500 users. Claim incubator tokens + legendary weapon crate. Updated weekly code list available.</p>
+<div class="card-meta"><span>💎 April 2, 2026</span><a class="read-more" data-article="How to redeem: Visit reward.ff.garena.com, login, enter code. New codes every Monday and Thursday. Follow for more!">Read more →</a></div>
+</div>
+</div>
+</div>
+<div class="pagination">
+<a class="page-btn active">1</a>
+<a class="page-btn">2</a>
+<a class="page-btn">3</a>
+<a class="page-btn">Next →</a>
+</div>
+</div>
 
 <aside>
-  <!-- UPCOMING EVENTS CARD -->
-  <div class="sidebar-card">
-    <h3>📢 UPCOMING EVENTS</h3>
-    <ul class="upcoming-list">
-      <li><span class="event-name">🎯 Free Fire Clash Squad Cup</span><span class="event-date">April 5, 2026 • 8PM PKT</span><span style="font-size:0.7rem; color:#aaa;">Custom room, free entry</span></li>
-      <li><span class="event-name">🌟 OB45 Advance Server Launch</span><span class="event-date">April 7, 2026 (Registration Open)</span></li>
-      <li><span class="event-name">🏅 Pakistan Esports League Qualifiers</span><span class="event-date">April 12-14, 2026</span></li>
-      <li><span class="event-name">💎 Diamond Top-Up Bonus (200% extra)</span><span class="event-date">April 1 - April 8</span></li>
-      <li><span class="event-name">🔥 Weekend BR Tournament (FF Squad)</span><span class="event-date">April 3-4, Free Room ID</span></li>
-    </ul>
-  </div>
+<div class="sidebar-card">
+<h3>📢 UPCOMING EVENTS</h3>
+<ul class="upcoming-list">
+<li><span class="event-name">🎯 Free Fire Clash Squad Cup</span><span class="event-date">April 5, 2026 • 8PM PKT</span><span style="font-size:0.7rem; color:#aaa;">Custom room, free entry</span></li>
+<li><span class="event-name">🌟 OB45 Advance Server Launch</span><span class="event-date">April 7, 2026 (Registration Open)</span></li>
+<li><span class="event-name">🏅 Pakistan Esports League Qualifiers</span><span class="event-date">April 12-14, 2026</span></li>
+<li><span class="event-name">💎 Diamond Top-Up Bonus (200% extra)</span><span class="event-date">April 1 - April 8</span></li>
+<li><span class="event-name">🔥 Weekend BR Tournament (FF Squad)</span><span class="event-date">April 3-4, Free Room ID</span></li>
+</ul>
+</div>
 
-  <!-- REDEEM CODE CARD -->
-  <div class="sidebar-card">
-    <h3>🎁 REDEEM CODE TODAY</h3>
-    <div class="redeem-code">FFIC32N8D</div>
-    <div class="redeem-code">FF9E7R5T2A</div>
-    <div class="redeem-code">VORTEX45FF</div>
-    <p style="font-size:0.7rem; margin-top:12px;">✅ Active till 11:59 PM IST. Redeem at reward.ff.garena.com</p>
-  </div>
+<div class="sidebar-card">
+<h3>🎁 REDEEM CODE TODAY</h3>
+<div class="redeem-code">FFIC32N8D</div>
+<div class="redeem-code">FF9E7R5T2A</div>
+<div class="redeem-code">VORTEX45FF</div>
+<p style="font-size:0.7rem; margin-top:12px;">✅ Active till 11:59 PM IST. Redeem at reward.ff.garena.com</p>
+</div>
 
-  <!-- WHATSAPP CTA CARD -->
-  <div class="sidebar-card cta-mini">
-    <h3 style="margin-bottom:8px;">⚡ JOIN FF TOURNAMENT</h3>
-    <p style="font-size:0.85rem;">Get instant Custom Room ID & Password on WhatsApp. Daily matches, zero fees!</p>
-    <a href="https://wa.link/dfdtgx" target="_blank" style="display:inline-block; margin-top:14px; background:#ffb703; color:#000; padding:8px 22px; border-radius:40px; text-decoration:none; font-weight:700;">Join WhatsApp →</a>
-  </div>
+<div class="sidebar-card cta-mini">
+<h3 style="margin-bottom:8px;">⚡ JOIN FF TOURNAMENT</h3>
+<p style="font-size:0.85rem;">Get instant Custom Room ID & Password on WhatsApp. Daily matches, zero fees!</p>
+<a href="https://wa.link/dfdtgx" target="_blank" style="display:inline-block; margin-top:14px; background:#ffb703; color:#000; padding:8px 22px; border-radius:40px; text-decoration:none; font-weight:700;">Join WhatsApp →</a>
+</div>
 
-  <!-- LATEST LEAKS CARD -->
-  <div class="sidebar-card">
-    <h3>📰 LATEST LEAKS</h3>
-    <ul style="list-style:none;">
-      <li style="margin-bottom:15px;">🔹 "New pet ability: revive teammate once per match" – datamine</li>
-      <li style="margin-bottom:15px;">🔹 Upcoming collaboration: Free Fire x Jujutsu Kaisen skins in May</li>
-      <li style="margin-bottom:15px;">🔹 New rank season reward: legendary MP5 skin</li>
-      <li>🔹 Free Fire Max graphic enhancements for 120fps</li>
-    </ul>
-  </div>
+<div class="sidebar-card">
+<h3>📰 LATEST LEAKS</h3>
+<ul style="list-style:none;">
+<li style="margin-bottom:15px;">🔹 "New pet ability: revive teammate once per match" – datamine</li>
+<li style="margin-bottom:15px;">🔹 Upcoming collaboration: Free Fire x Jujutsu Kaisen skins in May</li>
+<li style="margin-bottom:15px;">🔹 New rank season reward: legendary MP5 skin</li>
+<li>🔹 Free Fire Max graphic enhancements for 120fps</li>
+</ul>
+</div>
 
-  <!-- ===== TOURNAMENTS LINK - NOW REDIRECTS TO INDEX.HTML ===== -->
-  <div class="sidebar-card" style="background: linear-gradient(145deg,#1a1507,#0a0a0a); border-color:#ffb70340; text-align:center; cursor:pointer;" onclick="window.location.href='index.html'">
-    <div style="font-size: 2rem;">🏆</div>
-    <h3 style="color:#ffb703; margin: 8px 0;">TOURNAMENTS</h3>
-    <p style="font-size:0.8rem;">Click here to join Free Fire custom room battles →</p>
-    <div style="margin-top: 10px; font-size: 0.75rem; color:#ffb703;">⚡ Active Squads • Daily Rooms</div>
-  </div>
-  <!-- ===== END OF TOURNAMENTS LINK ===== -->
+<div class="sidebar-card" style="background: linear-gradient(145deg,#1a1507,#0a0a0a); border-color:#ffb70340; text-align:center; cursor:pointer;" onclick="window.location.href='index.html'">
+<div style="font-size: 2rem;">🏆</div>
+<h3 style="color:#ffb703; margin: 8px 0;">TOURNAMENTS</h3>
+<p style="font-size:0.8rem;">Click here to join Free Fire custom room battles →</p>
+<div style="margin-top: 10px; font-size: 0.75rem; color:#ffb703;">⚡ Active Squads • Daily Rooms</div>
+</div>
 </aside>
+</div>
+</div>
 
-<!-- 
-  ============================================================================
-  QUICK NOTES:
-  - The entire purple card with "TOURNAMENTS" now redirects to index.html on click.
-  - If your main tournament page is named differently (e.g., main.html, tournament.html), 
-    change 'index.html' in the onclick attribute to your actual filename.
-  - Example: onclick="window.location.href='tournament-main.html'"
-  ============================================================================
---> 
+<div style="max-width:1300px; margin:0 auto 3rem; padding:0 5%;">
+<div class="featured-article">
+<h2 class="featured-title">📅 WEEKLY CUSTOM ROOM TOURNAMENT SCHEDULE</h2>
+<p style="margin-bottom:1rem;">All tournaments are <strong>FREE</strong> and organized via WhatsApp. Room ID shared 15 mins before match.</p>
+<div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between;">
+<div style="background:#0a0a0a; padding:1rem; border-radius:24px; flex:1;"><strong>Monday & Wednesday</strong><br>Clash Squad (5v5)<br>🕘 9:00 PM PKT</div>
+<div style="background:#0a0a0a; padding:1rem; border-radius:24px; flex:1;"><strong>Friday - Battle Royale</strong><br>Squad custom room (classic)<br>🕘 10:00 PM PKT</div>
+<div style="background:#0a0a0a; padding:1rem; border-radius:24px; flex:1;"><strong>Sunday - Ranked Scrim</strong><br>Pro room & Prize pool<br>🕘 8:30 PM PKT</div>
+</div>
+<div style="text-align:center; margin-top:1.8rem;">
+<a href="https://wa.link/dfdtgx" target="_blank" style="background:#ffb703; color:#000; padding:12px 32px; border-radius:60px; text-decoration:none; font-weight:bold;">📲 REGISTER FOR TOURNAMENT</a>
+</div>
+</div>
+</div>
+
+<footer>
+© 2026 Free Fire Insider — Unofficial Community Blog | All trademarks belong to Garena. Daily updates, leaks & esports news.
+<br>🔴 Join our WhatsApp for instant room IDs & tournament alerts.
+</footer>
+
+<a href="https://wa.link/dfdtgx" target="_blank" class="whatsapp-float">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<div class="tiktok-side">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+<a href="https://www.tiktok.com/@m4__fucck__x" target="_blank">@m4__fucck__x</a>
+</div>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+if(menuToggle){
+menuToggle.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+}
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.addEventListener('click', () => {
+navLinks.classList.remove('active');
+});
+});
+
+document.querySelectorAll('.read-more').forEach(btn => {
+btn.addEventListener('click', (e) => {
+e.preventDefault();
+const articleText = btn.getAttribute('data-article') || "Full article coming soon! Stay tuned for detailed patch notes & event analysis.";
+alert("📢 " + articleText);
+});
+});
+
+document.querySelectorAll('.page-btn').forEach(btn => {
+btn.addEventListener('click', function() {
+document.querySelectorAll('.page-btn').forEach(p => p.classList.remove('active'));
+this.classList.add('active');
+alert("📄 Page navigation demo. More posts will load in production.");
+});
+});
+</script>
+</body>
+</html>
