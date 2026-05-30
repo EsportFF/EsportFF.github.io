@@ -375,31 +375,221 @@ transform:translateY(0px);
 
 /* MOBILE */
 
-@media(max-width:768px){
+/* RESPONSIVE FIXES */
 
-.hero h1{
-font-size:45px;
+img{
+max-width:100%;
+height:auto;
+display:block;
 }
 
-.hero p{
-font-size:16px;
+@media (max-width:1200px){
+
+.hero h1{
+font-size:65px;
 }
 
 .title{
-font-size:34px;
+font-size:42px;
+}
+
+}
+
+@media (max-width:992px){
+
+nav{
+padding:18px 5%;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.title{
+font-size:38px;
+}
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.gallery{
+grid-template-columns:repeat(2,1fr);
 }
 
 .cta h2{
-font-size:34px;
+font-size:42px;
+}
+
+}
+
+@media (max-width:768px){
+
+nav{
+padding:15px 5%;
+}
+
+.logo{
+font-size:24px;
 }
 
 nav ul{
 display:none;
 }
 
+.hero{
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:42px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:15px;
+line-height:1.8;
+}
+
 .hero-buttons{
 flex-direction:column;
 align-items:center;
+width:100%;
+}
+
+.btn,
+.btn2{
+width:100%;
+max-width:300px;
+text-align:center;
+}
+
+.section{
+padding:70px 5%;
+}
+
+.title{
+font-size:32px;
+}
+
+.subtitle{
+font-size:14px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:auto;
+min-height:220px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:25px;
+}
+
+.cta{
+margin:0 5% 60px;
+padding:70px 20px;
+}
+
+.cta h2{
+font-size:32px;
+}
+
+.cta p{
+font-size:14px;
+}
+
+.whatsapp{
+width:58px;
+height:58px;
+right:12px;
+bottom:12px;
+}
+
+.tiktok{
+left:10px;
+bottom:10px;
+padding:10px 14px;
+}
+
+.tiktok img{
+width:22px;
+}
+
+.tiktok a{
+font-size:12px;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero{
+min-height:90vh;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.title{
+font-size:28px;
+}
+
+.subtitle{
+font-size:13px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+}
+
+.cta h2{
+font-size:26px;
+}
+
+footer{
+font-size:13px;
+padding:20px;
+}
+
+.logo{
+font-size:20px;
+}
+
+}
+
+@media (min-width:1600px){
+
+.hero-content{
+max-width:1000px;
+}
+
+.hero h1{
+font-size:90px;
+}
+
+.hero p{
+font-size:22px;
 }
 
 }
